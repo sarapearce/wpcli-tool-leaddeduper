@@ -9,8 +9,6 @@ if ( ! class_exists( 'WP_CLI' ) ) {
 
 class CXL_Command {
 
-
-
     public function __invoke( $args ) {
         WP_CLI::success( $args[0] );
 				console.log('here');
@@ -19,7 +17,6 @@ class CXL_Command {
 				$this.intercom = new IntercomClient($token, '');
 				$this->removeLeadDupes();
     }
-
 
 		public function removeLeadDupes() {
 
@@ -82,10 +79,9 @@ class CXL_Command {
        			echo 'Caught exception: ',  $e->getMessage(), "\n";
 						return false;
  	 			}
-
 		}
 		return true;
-
+}
 }
 
 WP_CLI::add_command( 'cxl-intercom', 'CXL_Command' );
