@@ -24,13 +24,9 @@ Once you've done so, you can install this package with:
 
 Github issues aren't for general support questions, but there are other venues you can try: https://wp-cli.org/#support
 
-
-*This README.md is generated dynamically from the project's codebase using `wp scaffold package-readme` ([doc](https://github.com/wp-cli/scaffold-package-command#wp-scaffold-package-readme)). To suggest changes, please submit a pull request against the corresponding part of the codebase.*
-
-
 ## Versioning
 
-This project can be found publicly at: https://github.com/sarapearce/{myreponamegoeshere}
+This project can be found publicly at: https://github.com/sarapearce/cxl-intercom-lead-deduper
 
 ## Authors
 
@@ -44,4 +40,3 @@ This project is licensed under the GNU License - see the (https://www.gnu.org/li
 
 * https://github.com/intercom/intercom-php
 * https://github.com/wp-cli/scaffold-package-command
-*
