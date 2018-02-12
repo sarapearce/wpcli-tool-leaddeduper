@@ -23,6 +23,8 @@ if (! class_exists('CXL_Command') ) {
 class CXL_Command {
 
     public function __invoke( $args ) {
+
+
         WP_CLI::success( $args[0] );
 				// build the Intercom object
 				$token = $this->getToken();
@@ -33,8 +35,10 @@ class CXL_Command {
 						echo 'Caught exception: ',  $e->getMessage(), "\n";
 						die();
 				}
-
+        //
 				$this->removeLeadDupes();
+				// $this->resetTestData();
+
     }
 
 		public function removeLeadDupes() {
@@ -45,18 +49,19 @@ class CXL_Command {
 				// remove the duplicate leads from Intercom
 				$success = $this->removeDuplicateLeads($duplicate_leads);
 
-				// for testing
-				echo 'Success: ' . $success;
 		}
 
 		private function getToken() {
 			return get_option('intercom-token');
 		}
-
+//
+// 		// used for testing
 		private function resetTestData() {
-
+			// create a duplicates of a user
+			$this->intercom->leads->create(["email" => "sarapearce3.14@gmail.com"]);
+			$this->intercom->leads->create(["email" => "sarapearce3.14@gmail.com"]);
 		}
-
+//
 		public function findDuplicateLeads($leads) {
 			$unique_leads = [];
 			$duplicate_leads = [];
