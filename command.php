@@ -8,6 +8,8 @@
  * Author: Sara Pearce
  * Author URI: http:/*sarapearce.net
  * License: GPL2
+
+ * @package Remote Database Cleanup
  */
 
 /* Load the intercom/php module */
@@ -38,6 +40,7 @@ if ( ! class_exists( 'CXL_Command' ) ) {
 			$token = $this->get_token();
 			try {
 				$this->intercom = new IntercomClient( $token, null );
+
 			} catch ( Exception $e ) {
 				echo 'Unable to create Intercom Object ',  '\n';
 				echo ' Caught exception:  ' ,  esc_url( $e->getMessage() ), ' \n ';
