@@ -1,2 +1,2 @@
 require:
-  - class-cxl-command.php
+  - command.php
