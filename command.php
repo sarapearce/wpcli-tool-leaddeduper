@@ -23,7 +23,7 @@ if ( ! class_exists( ' WP_CLI ' ) ) {
 	return;
 }
 
-if ( ! class_exists( 'CXL_Command_2' ) ) {
+if ( ! class_exists( 'CXL_Command' ) ) {
 	/**
 	 * This class builds an Intercom object that allows us to CRUD on the Intercom server,
 	 * then it removes duplicate leads on the Intercom remote server.
@@ -34,6 +34,7 @@ if ( ! class_exists( 'CXL_Command_2' ) ) {
 		 * $args is an array of arguments, currently empty
 		 */
 		public function __invoke( $args ) {
+			echo 'HERE';
 			WP_CLI::success( $args[0] );
 
 			/**
@@ -49,10 +50,9 @@ if ( ! class_exists( 'CXL_Command_2' ) ) {
 				echo ' Caught exception:  ' ,  esc_url( $e->getMessage() ), ' \n ';
 				die();
 			}
+			$this->remove_lead_dupes();
 
-			// $this->remove_lead_dupes();
-
-				 $this->resetTestData();
+		// $this->reset_test_data();
 
 		}
 
@@ -103,7 +103,7 @@ if ( ! class_exists( 'CXL_Command_2' ) ) {
 				/**
 				 * Use an email as an indicator of a unique lead
 				 */
-				if ( ! in_array( $leads->contacts[ $key ]->email, $unique_leads, true ) ) {
+				if ( ! in_array( $leads->contacts[ $key ]->email, $unique_leads, true) ) {
 					array_push( $unique_leads, $leads->contacts[ $key ]->email );
 				} else {
 					array_push( $duplicate_leads, $leads->contacts[ $key ]->id );
@@ -145,5 +145,5 @@ if ( ! class_exists( 'CXL_Command_2' ) ) {
 	/**
 		* Add the function to the command object
 		*/
-	WP_CLI::add_command( 'cxl-intercom', 'CXL_Command_2' );
+	WP_CLI::add_command( 'cxl-intercom', 'CXL_Command' );
 }
