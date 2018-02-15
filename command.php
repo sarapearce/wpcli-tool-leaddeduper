@@ -27,14 +27,8 @@ if ( ! class_exists( 'CXL_Command' ) ) {
 	class CXL_Command {
 			/**
 			 * Get the token and build the Intercom object
-			 *
-			 * @args is an array of arguments, currently empty
 			 */
-		public function __construct( $args ) {
-			if ( ! $args ) {
-				$args = [];
-			}
-
+		public function __construct() {
 			WP_CLI::success( $args[0] );
 
 			/**
@@ -51,7 +45,6 @@ if ( ! class_exists( 'CXL_Command' ) ) {
 				die();
 			}
 			$this->remove_lead_dupes();
-		// $this->reset_test_data();
 		}
 
 				/**
@@ -91,7 +84,7 @@ if ( ! class_exists( 'CXL_Command' ) ) {
 				/**
 				 * Sort and isolate the duplicate leads using the email as the unique identifier.
 				 *
-				 * @$leads is an object with contacts and metadata
+				 * $leads is an object with contacts and metadata
 				 */
 		public function find_duplicate_leads( $leads ) {
 			$unique_leads = [];
@@ -101,7 +94,7 @@ if ( ! class_exists( 'CXL_Command' ) ) {
 				/**
 				 * Use an email as an indicator of a unique lead
 				 */
-				if ( ! in_array( $leads->contacts[ $key ]->email, $unique_leads, true) ) {
+				if ( ! in_array( $leads->contacts[ $key ]->email, $unique_leads, true ) ) {
 					array_push( $unique_leads, $leads->contacts[ $key ]->email );
 				} else {
 					array_push( $duplicate_leads, $leads->contacts[ $key ]->id );
