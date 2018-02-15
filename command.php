@@ -19,10 +19,6 @@
 require 'vendor/autoload.php';
 use Intercom\IntercomClient;
 
-if ( ! class_exists( ' WP_CLI ' ) ) {
-	return;
-}
-
 if ( ! class_exists( 'CXL_Command' ) ) {
 	/**
 	 * This class builds an Intercom object that allows us to CRUD on the Intercom server,
@@ -34,7 +30,11 @@ if ( ! class_exists( 'CXL_Command' ) ) {
 			 *
 			 * @args is an array of arguments, currently empty
 			 */
-		public function __invoke( $args ) {
+		public function __construct( $args ) {
+			if ( ! $args ) {
+				$args = [];
+			}
+
 			WP_CLI::success( $args[0] );
 
 			/**
