@@ -30,7 +30,7 @@ This project can be found publicly at: https://github.com/sarapearce/cxl-interco
 
 ## Authors
 
-* **Sara Pearce** - [herself](http://sarapearce.net)
+* **Sara Pearce** - [Portfolio Site](http://sarapearce.net)
 
 ## License
 
