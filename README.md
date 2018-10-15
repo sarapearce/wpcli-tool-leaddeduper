@@ -1,4 +1,4 @@
-sarapearce/Wordpress WPCLI Too to clean remote Intercom database
+Wordpress WP CLI Tool to clean remote Intercom database
 ===================================
 
 a command line tool for removing duplicate leads in the Intercom database
