@@ -11,11 +11,11 @@ Quick links: [Using](#using) | [Installing](#installing) | [Contributing](#contr
 
 This package is used to use the WP-CLI tool to run a single command `wp cxl-intercom` to be able to dedupe/clean the Intercom database via the Intercom API.
 
-After cloning the repo, be sure you are in the root directory, then run `wp cxl-intercom` which will then do all the api authentication and cleaning. NOTE: The keys are out of date, if you install and follow these directions, nothing will happen. 
+After cloning the repo, be sure you are in the root directory, then run `wp cxl-intercom` which will then do all the api authentication and cleaning. 
+
+NOTE: The keys are out of date, if you install and follow these directions, nothing will happen. 
 
 To use this to clean your own Intercom API in Wordpress, update the command.php file with your own auth info, or point the auth to your appropriate environment variables.
-
-Almost all changes are made in the command.php file.
 
 
 ## Installing
