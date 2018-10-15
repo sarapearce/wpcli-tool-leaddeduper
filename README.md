@@ -9,6 +9,7 @@ Quick links: [Using](#using) | [Installing](#installing) | [Contributing](#contr
 
 ## Using
 
+This package is used to use the WP-CLI tool to run a single command to be able to dedupe/clean the Intercom database via the Intercom API.
 
 
 ## Installing
