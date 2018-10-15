@@ -1,4 +1,4 @@
-sarapearce/cxl-intercom-lead-dedupe
+sarapearce/Wordpress WPCLI Too to clean remote Intercom database
 ===================================
 
 a command line tool for removing duplicate leads in the Intercom database
